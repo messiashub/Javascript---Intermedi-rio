@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        div{
+            display: inline-block;
+            padding: 20px;
+            margin: 20px;
+            font-size: 2rem;
+            background-color: brown;
+            color: chartreuse;
+        }
+    </style>
+
+    <script>
+        function changeH1(input){
+            let h2 = document.getElementsByTagName('h2')[0];
+            h2.innerText = input.value;
+        }
+
+        function hideH1(){
+            let h1 = document.getElementsByTagName("h1")[0];
+            h1.style.display = "none";  
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>Eventos</h1>
+    
+    <h2>Clique em mim</h2>
+
+    <input id="texto" type="text" name="" id="" oninput="changeH1(this)">
+
+    <div onclick="hideH1()">Click</div>
+    
+</body>
+</html>
