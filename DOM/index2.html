@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos parte 2</title>
+
+    <style>
+        img{
+            width: 200px;
+        }
+
+        div{
+            display: inline;
+            padding: 10px;
+            font-size: 2rem;
+            color: cornsilk;
+            background-color: rgb(123, 213, 240)
+        }
+    </style>
+    <script>
+        function mudarCor(div){
+               
+            div.style.backgroundColor="red";
+        }
+        function voltaCor(div){
+            
+            div.style.backgroundColor ="rgb(123, 213, 240)";
+        }
+    </script>
+    
+</head>
+<body onload="console.log('Pagina carregada')">
+
+    <img src="/DOM/joystick.jpg" >
+
+    <div onmouseover="mudarCor(this)" onmouseout="voltaCor(this)">Click</div>
+
+
+    
+
+    
+</body>
+</html>
