@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo</title>
+
+    <style>
+        #d{
+            width: 150px;
+            height: 40px;
+            padding: 10px;
+            margin: 30px;
+            text-align: center;
+            background-color: cadetblue;
+        }
+
+        #botao{
+            margin-left: 30px;
+        }
+    </style>
+
+    <script>
+
+        let pessoas= ["Nei","Igor","Rose", "Claudio","Simone"]
+
+        function sortear(){
+            let n = pessoas.length;
+            let ns = Math.floor(Math.random() * n);
+            let s = document.getElementById("d").innerHTML = pessoas[ns];
+            
+        }
+    </script>
+</head>
+<body>
+
+    <h1 id="d"></h1>
+    <button id="botao"onclick="sortear()">Sortear</button>
+</body>
+</html>
