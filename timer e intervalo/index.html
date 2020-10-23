@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+
+    <script>
+
+        function mudarCor(){
+            let h = document.getElementsByTagName("h1")[0];
+            h.style.color= "red";
+            
+
+        }
+        function mudarTexto(){
+            let h = document.getElementsByTagName("h1")[0];
+            h.innerHTML="Novo Título"
+            setTimeout(mudarCor, 3000)  //O método setTimeout () chama uma função ou avalia uma expressão após um número especificado de milissegundos.
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <h1>Título</h1>
+
+    <input onclick="mudarTexto()" type="submit" value="Mudar">
+
+
+    
+
+
+    
+</body>
+</html>
