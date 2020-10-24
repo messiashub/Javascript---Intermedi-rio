@@ -1,0 +1,17 @@
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 300px; /*Largura*/
+    margin: auto;    /*centralizado no meio*/
+    background-color: rgb(200, 229, 253);
+    padding: 20px;
+    border-radius: 10px;
+}
+input{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    
+}
+
