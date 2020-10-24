@@ -15,7 +15,6 @@ let resultado = document.getElementById('resultado');
 // 2° Passo
 
 function calcular(){   // lincar a função com a tag button no html
-    console.log('calculando...');
     let adultos = adulto.value;
     let criancas = crianca.value;
     let duracao = inputDuracao.value;
@@ -24,8 +23,8 @@ function calcular(){   // lincar a função com a tag button no html
     let qtdTotalCerveja = cervejaPP(duracao) * adultos;
     let qtdTotalBebidas = bebidasPP(duracao) * adultos + (bebidasPP(duracao)/ 2 * criancas);
     
-    // 6° Passo  
-    resultado.innerHTML=`<p>${qtdTotalCarne/1000} Kg de Carne</p>`
+    // 6° Passo 
+    resultado.innerHTML+=`<p>${qtdTotalCarne/1000} Kg de Carne</p>`
     resultado.innerHTML+=`<p>${Math.ceil(qtdTotalCerveja/355)} latas de Cerveja</p>`
     resultado.innerHTML+=`<p>${Math.ceil( qtdTotalBebidas/2000)} Garrafas de Bebidas</p>`
 }
