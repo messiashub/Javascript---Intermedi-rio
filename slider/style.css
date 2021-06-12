@@ -29,3 +29,25 @@ header{
     background-position: center;
     background-size: cover;
 }
+.slider--controls{
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.control1,.control2{
+    display: flex;
+    width: 70px;
+    height: 70px;
+    color: white;
+    background-color: blue;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.control1,.control2:hover{
+    background-color: red;
+}
