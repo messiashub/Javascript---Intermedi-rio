@@ -33,13 +33,11 @@ function proximo(){  // 3.2
     updateMargin(); // 3.3  
 }
 
-
 function updateMargin(){ // 3.3
     let sliderItemWidth = document.querySelector('.slider--item').clientWidth;
     console.log(sliderItemWidth);
     let newMargin =(slideCorrente * sliderItemWidth);
     document.querySelector('.slider--width').style.marginLeft = `-${newMargin}px`;
     document.querySelector('.slider--width').style.transition = "all 2.5s";
-
 }
 setInterval(proximo,5000);

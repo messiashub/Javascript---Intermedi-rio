@@ -32,22 +32,13 @@ header{
     justify-content: center;
     align-items: center;
 }
-@keyframes aparece{
-    0%{opacity:0}
-    100%{opacity: 1}
-
-}
 .slider--item h1{
     /* display: none; */
    /*  opacity: 0; */
     font-size: 4em;
     color: rgba(255, 255, 255, 0.959);
-    text-shadow: 3px 2px 5px #0000007d;
-    animation: aparece 2s ;
-    
+    text-shadow: 3px 2px 5px #0000007d;  
 }
-
-
 .slider--controls{
     position: absolute;
     z-index: 99;
