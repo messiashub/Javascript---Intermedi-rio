@@ -48,6 +48,9 @@ header{
     align-items: center;
     cursor: pointer;
 }
-.control1,.control2:hover{
+.control1:hover{
+    background-color: red;
+}
+.control2:hover{
     background-color: red;
 }
