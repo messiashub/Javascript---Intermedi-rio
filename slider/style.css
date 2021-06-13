@@ -61,6 +61,7 @@ header{
     width: 70px;
     height: 70px;
     color: white;
+    font-size: 1.1em;
     box-shadow:1px 1px 3px rgb(63 60 60 / 74%);
     background-color: rgba(96, 192, 248, 0.561);
     border-radius: 50%;
