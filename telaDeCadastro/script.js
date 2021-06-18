@@ -1,6 +1,6 @@
 
 let Mvalidador = {
-    handleSubmit:(event)=>{
+    handleSubmit: (event) => {
         event.preventDefault();
         let enviar = true;
 
@@ -8,66 +8,76 @@ let Mvalidador = {
 
         Mvalidador.clearErrors();
 
-        for(let i=0; i < inputs.length; i++){
+        for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             let check = Mvalidador.checkInput(input);
-            if(check !== true){
+            if (check !== true) {
                 enviar = false;
                 // exibir erro
-                Mvalidador.showError(input,check);
+                Mvalidador.showError(input, check);
 
-            } 
-            
+            }
+
         }
-        
-        if(enviar){
+
+        if (enviar) {
             form.submit();
 
         }
     },
-    checkInput:(input)=>{
+    checkInput: (input) => {
         let rules = input.getAttribute('data-rules');
-        if(rules !== null){
-            rules =  rules.split('|');
-            for(let k in rules){
+        if (rules !== null) {
+            rules = rules.split('|');
+            for (let k in rules) {
                 let rDetails = rules[k].split('=');
-                switch(rDetails[0]){
+                switch (rDetails[0]) { // Verificações
                     case 'required':
-                        if(input.value == ''){
+                        if (input.value == '') {
                             return 'Campo não pode ser vazio'
                         }
                         break;
-                        case 'min':
-
+                    case 'min':
+                        if (input.value.length < rDetails[1]) {
+                            return `O campo deve ter pelo menos ${rDetails[1]} caracters`
+                        }
                         break;
+                    case 'email':
+                        if(input.value !== ''){
+                            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            if(!regex.test(input.value.toLowerCase())){
+                                return 'Digite um email válido!'
+
+                            }
+                        }
                 }
             }
         }
         return true;
     },
-    showError:(input,error)=>{
-        input.style.borderColor='red';
+    showError: (input, error) => {
+        input.style.borderColor = 'red';
 
         let errorElement = document.createElement('div');
         errorElement.classList.add('error');
         errorElement.innerHTML = error;
-        input.parentElement.insertBefore(errorElement,input.ElementSibling);
- 
+        input.parentElement.insertBefore(errorElement, input.ElementSibling);
+
 
     },
 
-    clearErrors:()=>{
+    clearErrors: () => {
         let inputs = form.querySelectorAll('input');
-        for(let i= 0; i < inputs.length;i++){
+        for (let i = 0; i < inputs.length; i++) {
             inputs[i].style = '';
         }
 
         let errorElements = document.querySelectorAll('.error');
-        for(let i=0; i < errorElements.length; i++){
+        for (let i = 0; i < errorElements.length; i++) {
             errorElements[i].remove()
         }
     }
 
 };
 let form = document.querySelector('.validador');
-form.addEventListener('submit',Mvalidador.handleSubmit);
+form.addEventListener('submit', Mvalidador.handleSubmit);
