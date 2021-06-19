@@ -12,11 +12,12 @@
     <h2>Fomulário</h2>
     <form action="">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="" placeholder="Digite seu nome">
+        <input type="text" name="nome" id="" placeholder="Digite seu nome" required> <!-- required: deixa o campo obrigatório -->
         <label for="ano">Ano de nascimento</label>
-        <input type="number" name="ano" id="" placeholder="Ano de Nascimento">
-        <button>Adicionar</button>
+        <input type="number" name="ano" id="" placeholder="Ano de Nascimento" required> <!-- required: deixa o campo obrigatório -->
+        <button class="adicionar">Adicionar</button>
     </form>
+    <div class="alerta"></div> <!-- essa div vai mostrar o alerta de erro -->
     <hr>
     <table>
         <thead>
