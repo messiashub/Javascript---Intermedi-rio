@@ -19,9 +19,17 @@ function Entrevista(nome, ano) {
         return res;
     }
     this.mostrar_dados = function () {
-        console.log(`O nome informado é ${this.nome} o ano é ${this.ano_informado} e a idade é ${this.calcula_idade()}`)
+        console.log(`O nome informado é ${this.nome}, o ano é ${this.ano_informado} e a idade é ${this.calcula_idade()} anos`)
     }
-}
+    this.criar_linha_tabela = function (){ // 3.2
+        // 1 Criar Elementos
+        // 2 Aplicar estilos aos elementos
+        // 3 Criar os nós
+        // Vincular os nós aos elementos
+        // Vincular os elementos ao documento
+
+    }
+};
 
 
 // 2 Funções
