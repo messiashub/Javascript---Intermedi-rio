@@ -12,14 +12,17 @@
     <h2>Fomulário</h2>
     <form action="">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="" placeholder="Digite seu nome" required> <!-- required: deixa o campo obrigatório -->
+        <input type="text" name="nome" id="" placeholder="Digite seu nome" required>
+        <!-- required: deixa o campo obrigatório -->
         <label for="ano">Ano de nascimento</label>
-        <input type="number" name="ano" id="" placeholder="Ano de Nascimento" required> <!-- required: deixa o campo obrigatório -->
+        <input type="number" name="ano" id="" placeholder="Ano de Nascimento" required>
+        <!-- required: deixa o campo obrigatório -->
         <button class="adicionar">Adicionar</button>
     </form>
     <div class="alerta"></div> <!-- essa div vai mostrar o alerta de erro -->
     <hr>
-    <table> <!-- TABELA -->
+    <table>
+        <!-- TABELA -->
         <thead>
             <tr>
                 <!-- linha -->
@@ -29,13 +32,23 @@
                 <!--cédula  -->
             </tr>
         </thead>
-        <tbody> <!-- ESSA TAG  VAI RECEBER OS ELEMENTOS PRA  FORMAR UMA TABELA -->
+        <tbody>
+            <!-- ESSA TAG  VAI RECEBER OS ELEMENTOS PRA  FORMAR UMA TABELA -->
 
         </tbody>
     </table>
     <hr>
     <button>Gerar Estatísticas</button>
     <button>Gerar JSON</button>
+
+    <template id="template1">
+        <!-- TEMPLATE -->
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
 
     <script src="script.js"></script>
 </body>

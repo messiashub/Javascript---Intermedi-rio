@@ -46,6 +46,16 @@ function Entrevista(nome, ano) {
         // Vincular os elementos ao documento
         corpoTabela.appendChild(linha);
     }
+    this.criar_pelo_template = function(){  // 4 FUNÇÃO PARA CRIAR UMA TABELA USANDO UM TEMPLATE
+        let template = document.querySelector('#template1');
+        let lista_td = template.content.querySelectorAll('td');
+        lista_td[0].textContent = this.nome;
+        lista_td[1].textContent = this.ano_informado;
+        lista_td[2].textContent = this.calcula_idade();
+        let nova_linha = document.importNode(template.content,true);
+        corpoTabela.appendChild(nova_linha);
+    }
+
 };
 
 // 2 Funções
@@ -57,7 +67,8 @@ function adicionar_dados(event) {
         /* console.log('deu certo') */
         nova_entrevista = new Entrevista(dataNome.value, dataNasc.value);// 3.1
        /*  nova_entrevista.mostrar_dados();  // 3.1 */
-       nova_entrevista.criar_linha_tabela(); // 3.2
+       /* nova_entrevista.criar_linha_tabela(); */ // 3.2
+       nova_entrevista.criar_pelo_template();
 
     } else {
         document.querySelector('.alerta').innerHTML = 'Deu errado';
@@ -71,4 +82,4 @@ btnAd.addEventListener('click', adicionar_dados);
 
 
 // anotações:
-// preventDefault, newDate, objeto, this, new, construtor
+// preventDefault, newDate, objeto, this, new, construtor, tag template, document.importNode(), appendChild(), createTextNode()
