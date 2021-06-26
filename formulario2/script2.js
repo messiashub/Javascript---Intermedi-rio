@@ -42,13 +42,11 @@ btnAd.addEventListener('click', (event) => {
     if (dataAno.value >= 1900 && dataAno.value <= anoAtual) {
         /* let idade = anoAtual - dataAno.value */
 
-        mensagem.style.fontSize = '1.5em'
+        mensagem.style.fontSize = '1.2em'
         mensagem.innerHTML = `O nome é ${dataNome.value}, ano de seu nascimento é ${dataAno.value} e sua idade é ${idade()} anos`;
         tabela();
     } else {
-        mensagem.style.fontSize = '1.5em'
+        mensagem.style.fontSize = '1em'
         mensagem.innerHTML = 'error'
     }
-
-
 })
