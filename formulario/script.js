@@ -68,7 +68,7 @@ function adicionar_dados(event) {
         nova_entrevista = new Entrevista(dataNome.value, dataNasc.value);// 3.1
        /*  nova_entrevista.mostrar_dados();  // 3.1 */
        /* nova_entrevista.criar_linha_tabela(); */ // 3.2
-       nova_entrevista.criar_pelo_template();
+       nova_entrevista.criar_pelo_template(); // 4
 
     } else {
         document.querySelector('.alerta').innerHTML = 'Deu errado';
