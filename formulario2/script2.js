@@ -9,7 +9,6 @@ let corpoTabela = document.querySelector('tbody');
 let idade = ()=>{
     return anoAtual - dataAno.value;
 }
-
 // 3 FUNÇÃO PARA CRIAR A TABELA 
 // 3.1 Criando os elementos da tabela
 function tabela(){
@@ -35,16 +34,26 @@ function tabela(){
     corpoTabela.appendChild(linha);
 
 }
-
+// 4 CRIANDO A TABELA PELO TEMPLATE
+function tabelaTemplate(){
+    let template = document.querySelector('#template2');
+    let lista_td = template.content.querySelectorAll('td'); // Selecionando todo o conteúdo(content) que está dentro de template
+    lista_td[0].textContent = dataNome.value; // lista_td(td) na posição 0 recebe o conteúdo de texto(textContent) de dataNome
+    lista_td[1].textContent = dataAno.value;  // lista_td(td) na posição 1 recebe o conteúdo de texto(textContent) de dataAno
+    lista_td[2].textContent = idade();        // lista_td(td) na posição 2 recebe o conteúdo de texto(textContent) da função idade()
+    let tabela = document.importNode(template.content,true); // Importando(importNode) todo o conteúdo(nós) para a variável 'tabela'
+    corpoTabela.appendChild(tabela); // corpoTabela recebe como filho(appendChild) tabela
+}
 // 2 FUNÇÃO PARA OS EVENTOS APÓS  O 'CLICK'
 btnAd.addEventListener('click', (event) => {
     event.preventDefault();
     if (dataAno.value >= 1900 && dataAno.value <= anoAtual) {
         /* let idade = anoAtual - dataAno.value */
-
         mensagem.style.fontSize = '1.2em'
         mensagem.innerHTML = `O nome é ${dataNome.value}, ano de seu nascimento é ${dataAno.value} e sua idade é ${idade()} anos`;
-        tabela();
+        /* tabela(); */
+        tabelaTemplate();// 4
+
     } else {
         mensagem.style.fontSize = '1em'
         mensagem.innerHTML = 'error'
